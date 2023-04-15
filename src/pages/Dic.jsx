@@ -28,7 +28,7 @@ function Search() {
           {searchResults.word ? (
             <>
               <h1>{searchResults.word}</h1>
-              {searchResults.meaning.length > 0 ? (
+              {searchResults && searchResults.meaning.length > 0 ? (
                 <div>
                   {searchResults.meaning.map((result, index) => <p key={index}>{result}</p>)}
                 </div>
