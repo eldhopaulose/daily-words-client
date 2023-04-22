@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import Dic from './pages/Dic'
+// import Dic from './pages/Search'
+import WordsD from './pages/Words'
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-     <Dic/>
+     {/* <Dic/> */}
+     <WordsD/>
     </div>
   )
 }

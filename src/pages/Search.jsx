@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchAsync, clearSearch } from '../slices/words';
+import { searchAsync, clearSearch } from '../slices/searchSlice';
 
 function Search() {
   const dispatch = useDispatch();
