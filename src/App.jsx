@@ -1,16 +1,14 @@
-import { useState } from 'react'
-// import Dic from './pages/Search'
+import { Routes, Route } from "react-router-dom"
+import Dic from './pages/Search'
 import WordsD from './pages/Words'
 import './App.css'
+import TabButton from "./components/TabButton"
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-     {/* <Dic/> */}
-     <WordsD/>
+  <TabButton/>
     </div>
   )
 }
