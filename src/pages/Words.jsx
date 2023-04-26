@@ -23,13 +23,26 @@ function WordList() {
   return (
     <div>
       <h1>Words of the day</h1>
-      <ul>
-        {words.map((word) => (
-          <li key={word.english_word}>
-            <strong>{word.english_word}</strong>: {word.malayalam_definition}
-          </li>
-        ))}
-      </ul>
+      <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">English</th>
+            <th scope="col">Malayalam</th>
+          </tr>
+        </thead>
+      </table>
+      {words.map((word) => (
+        <table className="table table-bordered table-hover table-striped">
+          <tbody>
+            <tr key={word.english_word}>
+              <td className="text-left d-md-flex" style={{ Width: "200px" }}>
+                <strong>{word.english_word}</strong>
+              </td>
+              <td className="text-left">{word.malayalam_definition}</td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
     </div>
   );
 }
