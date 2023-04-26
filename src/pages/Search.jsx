@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchAsync, clearSearch } from "../slices/searchSlice";
+import { Waveform } from "@uiball/loaders";
 
 function Search() {
   // Get the search-related state and dispatch from the Redux store using useSelector and useDispatch
@@ -45,7 +46,10 @@ function Search() {
         </div>
         {/* Display the search results if available and hide if not */}
         {isLoading ? (
-          <p>Loading...</p>
+          // <p>Loading...</p>
+          <div className="col-12 d-flex align-items-center justify-content-center mt-5">
+              <Waveform size={40} lineWeight={3.5} speed={1} color="black" />
+          </div>
         ) : searchResults && searchResults.word ? (
           <>
             {/* Display the word being searched for */}
@@ -61,7 +65,7 @@ function Search() {
           </>
         ) : (
           // Display a message indicating that no results were found
-          <p>No results found.</p>
+          <p className="mt-5">No results found.</p>
         )}
       </div>
     </div>
