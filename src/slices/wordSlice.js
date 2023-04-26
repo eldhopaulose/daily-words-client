@@ -21,17 +21,17 @@ export const wordSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-        .addCase(featchWords.pending,(state,action)=>{
-            state.status = 'loading';
-        })
-        .addCase(featchWords.fulfilled,(state,action)=>{
-            state.status = 'succeeded';
-            state.words = action.payload;
-        })
-        .addCase(featchWords.rejected,(state,action)=>{
-            state.status = 'failed';
-            state.error = action.error.message;
-        })
+            .addCase(featchWords.pending, (state, action) => {
+                state.status = 'loading';
+            })
+            .addCase(featchWords.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.words = action.payload;
+            })
+            .addCase(featchWords.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            })
     }
 })
 

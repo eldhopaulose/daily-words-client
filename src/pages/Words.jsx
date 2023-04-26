@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { featchWords } from '../slices/wordSlice';
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { featchWords } from "../slices/wordSlice";
 
 function WordList() {
   const dispatch = useDispatch();
@@ -12,11 +12,11 @@ function WordList() {
     dispatch(featchWords());
   }, [dispatch]);
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return <div>Loading...</div>;
   }
 
-  if (status === 'failed') {
+  if (status === "failed") {
     return <div>Error: {error}</div>;
   }
 

@@ -43,7 +43,7 @@ function TabButton() {
           aria-labelledby="home-tab"
         >
           <div className="mt-5">
-          <Dic/>
+            <Dic />
           </div>
         </div>
         <div

@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { searchAsync, clearSearch } from '../slices/searchSlice';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { searchAsync, clearSearch } from "../slices/searchSlice";
 
 function Search() {
   // Get the search-related state and dispatch from the Redux store using useSelector and useDispatch
   const dispatch = useDispatch();
-  const { searchQuery, searchResults, isLoading } = useSelector((state) => state.search);
+  const { searchQuery, searchResults, isLoading } = useSelector(
+    (state) => state.search
+  );
   // Use useState to keep track of the search query entered by the user
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   // Define a function to handle the search button click event
   const handleSearch = () => {
@@ -20,15 +22,20 @@ function Search() {
     // Dispatch a clear search action to reset the search state
     dispatch(clearSearch());
     // Reset the query in the component state to an empty string
-    setQuery('');
+    setQuery("");
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <div className="row">
         <div className="sm-col-6 col-12">
           {/* Input field to allow the user to enter a search query */}
-          <input className='w-100' type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+          <input
+            className="w-100"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
         </div>
         <div className="mt-5">
           {/* Button to trigger the search action */}
@@ -46,9 +53,11 @@ function Search() {
             {/* Display the meanings of the word if available */}
             {searchResults.meaning.length > 0 ? (
               <div>
-                {searchResults.meaning.map((result, index) => <p key={index}>{result}</p>)}
+                {searchResults.meaning.map((result, index) => (
+                  <p key={index}>{result}</p>
+                ))}
               </div>
-            ) :null}
+            ) : null}
           </>
         ) : (
           // Display a message indicating that no results were found
