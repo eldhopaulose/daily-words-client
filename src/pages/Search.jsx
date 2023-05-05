@@ -40,7 +40,7 @@ function Search() {
         </div>
         <div className="mt-5">
           {/* Button to trigger the search action */}
-          <button onClick={handleSearch}>Search</button>
+          <button type="submit" onClick={handleSearch}>Search</button>
           {/* Button to clear the search results and query */}
           <button onClick={handleClear}>Clear</button>
         </div>
@@ -57,9 +57,11 @@ function Search() {
             {/* Display the meanings of the word if available */}
             {searchResults.meaning.length > 0 ? (
               <div>
+                <ul class="list-group">
                 {searchResults.meaning.map((result, index) => (
-                  <p key={index}>{result}</p>
+                  <li class="list-group-item" key={index}>{result}</li>
                 ))}
+                </ul>
               </div>
             ) : null}
           </>

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { featchWords } from "../slices/wordSlice";
+import { Waveform } from "@uiball/loaders";
+
 
 function WordList() {
   const dispatch = useDispatch();
@@ -13,7 +15,9 @@ function WordList() {
   }, [dispatch]);
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <div className="col-12 d-flex align-items-center justify-content-center mt-5">
+    <Waveform size={40} lineWeight={3.5} speed={1} color="black" />
+</div> 
   }
 
   if (status === "failed") {
@@ -22,8 +26,8 @@ function WordList() {
 
   return (
     <div>
-      <h1>Words of the day</h1>
-      <table class="table ">
+      <h1 className="mt-2">Words of the day</h1>
+      <table class="table mt-5">
         <thead>
           <tr>
             <th scope="col">English</th>
